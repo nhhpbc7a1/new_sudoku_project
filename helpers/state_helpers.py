@@ -257,6 +257,7 @@ def start_game_action(self, algorithm_name):
     self.is_playing = True   
     self.stop_flag = False
     self.start_timer()
+    self.algorithm_name = algorithm_name
     
     board = copy.deepcopy(self.robot1_start_state)
 
