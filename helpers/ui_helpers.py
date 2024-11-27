@@ -172,6 +172,7 @@ def human_vs_robot(self, board_frame):
        font=("Arial", 14, "bold"),
        fg_color="#F4CE98",
        text_color="Black",
+       command = lambda: self.hint_number(),
        width=55, height=35,)
     btnHint.grid(row=0, column=5, padx=15,pady=20)
     
@@ -299,6 +300,7 @@ def human_single(self, board_frame, mode):
        font=("Arial", 14, "bold"),
        fg_color="#F4CE98",
        text_color="Black",
+       command = lambda: self.hint_number(),
        width=55, height=35,)
     btnHint.grid(row=0, column=5, padx=15,pady=20)
     
@@ -555,6 +557,7 @@ def robot_single(self, board_frame, algorithm_name):
        font=("Arial", 14, "bold"),
        fg_color="#F4CE98",
        text_color="Black",
+       command = lambda: self.hint_number(),
        width=55, height=35,)
     btnHint.grid(row=0, column=5, padx=15,pady=20)
     

@@ -245,7 +245,9 @@ class Sudoku:
             self.robot1_entries[int_to_alpha(row)+int_to_alpha(col)].create_text(5, 5, text=str(num+1), font=("Arial", 12), anchor="nw")  # Đặt số ở góc trái trên
             self.root.update()  # Cập nhật giao diện
             self.root.after(self.step_delay) 
-
+            
+    def hint_number(self):
+        hint_number(self);
     
 
 def int_to_alpha(x):

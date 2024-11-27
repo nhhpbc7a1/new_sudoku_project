@@ -74,7 +74,8 @@ def generate_sudoku(self, level="medium"):
 
 
 
-
+def alpha_to_int(x):
+    return int(ord(x) - ord('A')) + 1;
     
 def int_to_alpha(x):
     return chr(x + ord('A'));
@@ -217,4 +218,17 @@ def is_valid(self, board, row, col, num):
 
     # Nếu không vi phạm quy tắc nào, trả về True
     return True    
+
+def hint_number(self):
+    # Tìm ô trống đầu tiên
+    empty_cell = self.find_empty_cell(self.start_state)
+    if not empty_cell:
+        # Nếu không còn ô trống, Sudoku đã được giải
+        return
+    
+    row, col = empty_cell
+    
+    self.selected_entry = int_to_alpha(row) + int_to_alpha(col);
+    self.enter_large_number(self.goal_state[row][col])
+    
 
