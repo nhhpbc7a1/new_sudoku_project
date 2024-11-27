@@ -119,6 +119,7 @@ class Sudoku:
             corner_radius=6,
             width=180,
             height=50,
+            command=self.root.destroy
         )
         self.buttonExit.grid(row=12, column=0, pady=15)
     def welcome_screen(self,board_frame):

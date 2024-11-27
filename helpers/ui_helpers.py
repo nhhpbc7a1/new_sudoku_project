@@ -9,7 +9,7 @@ def welcome_screen(self, board_frame):
             widget.destroy()
 
     brain_frame = tk.Frame(board_frame, bg="#FDE2BC", height=100)
-    brain_frame.pack(fill="x",pady=(50,10))
+    brain_frame.pack(fill="x",pady=(10,10))
     
     image_file_left = "threefriend.png"  # Đường dẫn ảnh góc trái
     img_left = load_sudoku_img(image_file_left)  # Gọi hàm load ảnh
@@ -178,7 +178,7 @@ def human_vs_robot(self, board_frame):
     newGame = ctk.CTkButton(bottom_frame, text="New Game", fg_color="#F64444", text_color="white",font=("Arial", 16, "bold"), corner_radius=6,width=110, height=50, command = lambda : self.new_game_action("hard") )
     newGame.grid(row=0, column=6,pady=20, padx=(45,0))
     self.mode = "hard"
-
+    self.new_game_action("hard")
 
 
 def human_single(self, board_frame, mode):
@@ -306,7 +306,7 @@ def human_single(self, board_frame, mode):
     newGame.grid(row=0, column=6,pady=20, padx=(55,0))
     
     self.mode = mode
-
+    self.new_game_action(mode)
 
 
 
@@ -563,5 +563,5 @@ def robot_single(self, board_frame, algorithm_name):
     self.mode = "hard"
     
     self.toggle = False
-
+    self.new_game_action("hard")
     

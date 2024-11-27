@@ -132,6 +132,9 @@ def logic_based(self, grid):
     
         # Phương pháp Backtracking (kỹ thuật đệ quy)
     def backtracking(grid):
+        
+        if self.stop_flag:
+            return False
         # Tìm ô trống
         empty_cell = find_empty_cell(grid)
         if not empty_cell:
