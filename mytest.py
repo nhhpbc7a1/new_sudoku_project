@@ -159,7 +159,7 @@ class Sudoku:
         reset_timer(self)
 
     def increase_mistake(self):
-        increase_mistake(self)
+        return increase_mistake(self)
         
     def new_game_action(self, mode):
         new_game_action(self, mode)

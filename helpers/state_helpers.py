@@ -200,13 +200,17 @@ def enter_large_number(self, number):
         if (self.blanks == 0):
             self.done_game_action("Người chơi", True);
             
+        if (number > 0):
+            self.entries[self.selected_entry].create_text(15, 15, text=str(number), font=("Arial", 18), anchor="center", fill=color)
+            
     else:
         color = "red";
         messagebox.showerror("Error", "Bạn đã nhập sai số!")
-        self.increase_mistake()
+                
+        if (number > 0 and self.increase_mistake() == True):
+            self.entries[self.selected_entry].create_text(15, 15, text=str(number), font=("Arial", 18), anchor="center", fill=color)
+
     
-    if (number > 0):
-        self.entries[self.selected_entry].create_text(15, 15, text=str(number), font=("Arial", 18), anchor="center", fill=color)
 
 
 # Hàm để nhập số nhỏ nằm ở góc trái trên ô với font-size 12
@@ -219,6 +223,12 @@ def enter_small_number(self, number):
 def increase_mistake(self):
     self.cnt_mistake += 1;
     self.mistakes_cnt.config(text=str(self.cnt_mistake))
+    if (self.cnt_mistake == 3):
+        self.done_game_action("Human", False)
+        new_game_action(self, self.mode)
+        return False
+    
+    return True
 
 def update_timer(self):
     if self.running:
